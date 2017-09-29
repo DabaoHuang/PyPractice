@@ -1,12 +1,21 @@
-# pip install requests
+# pip install requests selenium
 """import requests
+import sys
 
-res = requests.get("http://pala.tw/js-example/")
-print(res.text)"""
+try:
+    url = sys.argv[1]
+except IndexError:
+    url = 'null'
 
+if url == 'null':
+    print("Error: not get url")
+else:
+    res = requests.get(url)
+    print(res.text)"""
 
 from selenium import webdriver
 import sys
+import os
 
 #python d:/GIT/PyPractice/hello.py http://pala.tw/js-example/
 
